@@ -1,0 +1,11 @@
+version: '3'
+services:
+  web:
+    build: ./
+    environment:
+      - lvl0=FLAG-c8bc430804415b0872f5ae8ef1d2c1d1
+      - lvl1=FLAG-4c1bd75a66fb16278249bd29d723fef0
+      - lvl2=FLAG-2d29deedf37d93530e8faa559b991d0b
+      - lvl3=FLAG-00b8e1fdca74f9011afcaaf52e2da9c8
+    ports:
+      - "80:80"
