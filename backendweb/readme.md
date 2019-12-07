@@ -8,7 +8,7 @@ Vous devez créer un service qui répond un message statique.
 - Route: `GET /salut`
 - Réponse attendue: `Salut la gang`
 
-Vous devez exposer votre service Web afin que le serveur de correction puisse y accéder. La solution la plus simple est probablement d'utiliser (ngrok)[https://ngrok.com/]. Si vous avez des problèmes à le set up, venez nous voir.
+Vous devez exposer votre service Web afin que le serveur de correction puisse y accéder. La solution la plus simple est probablement d'utiliser [ngrok](https://ngrok.com/). Si vous avez des problèmes à le set up, venez nous voir.
 
 ## lvl1: Route dynamique
 
