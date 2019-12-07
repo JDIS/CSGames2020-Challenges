@@ -32,6 +32,10 @@ Exemple de retour: `debut = 3` et `fin = 6`
 
 `{"Woop": "woop", "suite": [3, 4, 5]}`
 
+Cas limite: `debut = 5` et `fin = 5`
+
+`{"Woop": "woop", "suite": []}`
+
 ## lvl3: Persister des objets
 
 Vous devez être en mesure de sauvegarder une `Brique`. Une brique a trois caractéristiques: un `name` (string), une `hauteur` (float) et une `largeur` (float).
