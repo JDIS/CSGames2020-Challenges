@@ -11,7 +11,9 @@
         "php": "^7.2",
         "fideloper/proxy": "^4.0",
         "laravel/framework": "^6.2",
-        "laravel/tinker": "^2.0"
+        "laravel/tinker": "^2.0",
+        "barryvdh/laravel-cors": "^0.11.4",
+        "barryvdh/laravel-ide-helper": "^2.6"
     },
     "require-dev": {
         "facade/ignition": "^1.4",
@@ -56,6 +58,15 @@
         ],
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi"
+        ],
+        "post-update-cmd": [
+            "Illuminate\\Foundation\\ComposerScripts::postUpdate",
+            "php artisan package:discover",
+            "php artisan ide-helper:generate",
+            "php artisan ide-helper:meta",
+            "php artisan key:generate",
+            "php artisan migrate:fresh",
+            "php artisan db:seed"
         ]
     }
 }
