@@ -1,0 +1,35 @@
+version: '2'
+
+services:
+  mariadb:
+    image: 'bitnami/mariadb:10.1'
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+      - MARIADB_USER=my_user
+      - MARIADB_DATABASE=my_database
+      - MARIADB_PASSWORD=my_password
+    ports:
+    - "3006:3006"
+
+  myapp:
+    tty: true
+    image: bitnami/laravel:6-debian-9
+    environment:
+      - DB_HOST=mariadb
+      - DB_USERNAME=my_user
+      - DB_DATABASE=my_database
+      - DB_PASSWORD=my_password
+    depends_on:
+      - mariadb
+    ports:
+      - 3000:3000
+    volumes:
+      - ./:/app
+
+  xd:
+    image: 'bitnami/mariadb:10.1'
+    depends_on:
+        - mariadb
+    command: ["sh", "/xd/import.sh"]
+    volumes:
+      - ./:/xd
