@@ -13,7 +13,7 @@ services:
 
   myapp:
     tty: true
-    image: bitnami/laravel:6-debian-9
+    build: ./
     environment:
       - DB_HOST=mariadb
       - DB_USERNAME=my_user
