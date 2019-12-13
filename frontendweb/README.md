@@ -1,3 +1,5 @@
+TODO CORS
+
 # Challenge Front-end JavaScript
 
 Un serveur backend est accessible à cette addresse: SOMETHING
@@ -62,8 +64,9 @@ Le paramètre "ligne" est optionnel. S'il n'est pas spécifié, toutes les ligne
 - S'il n'y a aucune donnée à afficher, Un message doit être inscrit au lieu du tableau.
 - Au dessus du tableau, on peut sélectionner un bouton coloré rond selon la couleur de la ligne pour filtrer les résultats. Un indicateur entourant le rond doit permettre de savoir quelle ligne est sélectionnée. 
 - Recliquer sur le bouton sélectionné fait qu'on fetch toutes les lignes de métro.
-- Cliquer sur un header permet de trier le tableau en ordre de cet header. Recliquer dessus fait en sorte que le tri est inversé.
+- Cliquer sur un header permet de trier le tableau en ordre de cet header. Recliquer dessus fait en sorte que le tri est inversé. Une flèche permet de connaitre le sens du tri.
 - Au lieu d'afficher 1 ou 0, les collonnes booléennes affichent un emoji checkbox ✅ ou un emoji X rouge ❌.
+- Un élément visuel doit permettre d'identifier qu'une requête vers le serveur est en cours.
 
 Il est INTERDIT d'utiliser une librairie de composantes pour faire le tableau.
 
