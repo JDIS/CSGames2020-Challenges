@@ -12,7 +12,12 @@ class MyController extends Controller
         if($request['n']) {
             $n = $request['n'];
         }
-        $incidents = Incident::paginate($n);
+        $query = Incident::class;
+        if ($request['ligne']) {
+            $incidents = Incident::where('line', 'Ligne ' . $request['ligne'])->paginate($n);
+        } else {
+            $incidents = Incident::paginate($n);
+        }
         return \Response::json($incidents);
     }
 }
