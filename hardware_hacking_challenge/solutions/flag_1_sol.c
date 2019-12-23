@@ -5,19 +5,19 @@
 
 int main()
 {
-    volatile pid_t PID = 13;
-    volatile size_t SIZE = 25;
-    void* ADDR = (void*)0x7ffbffffbc90;
+    volatile pid_t process_id = 13;
+    volatile size_t buffer_size = 25;
+    void* buffer_addr = (void*)0x7ffbffffbc90;
 
     struct iovec local[1];
     struct iovec remote[1];
-    local[0].iov_base = calloc(SIZE, sizeof(char));
-    local[0].iov_len = SIZE;
-    remote[0].iov_base = ADDR;
-    remote[0].iov_len = SIZE;
+    local[0].iov_base = calloc(buffer_size, sizeof(char));
+    local[0].iov_len = buffer_size;
+    remote[0].iov_base = buffer_addr;
+    remote[0].iov_len = buffer_size;
 
-    ssize_t nread = process_vm_readv(PID, local, 2, remote, 1, 0);
-    if (nread == SIZE)
+    ssize_t nread = process_vm_readv(process_id, local, 2, remote, 1, 0);
+    if (nread == buffer_size)
     {
         fprintf(stderr, "%s\n", local[0].iov_base);
         return 0;
