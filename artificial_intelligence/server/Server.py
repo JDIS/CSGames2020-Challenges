@@ -1,55 +1,88 @@
 #!/usr/bin/env python3
 
 import socket
+import os
+import sys
 
-from agents.Agents import HumanAgent, RandomAgent
+# import thread module
+from _thread import *
+import threading
+
+from agents.Agents import HumanAgent, SemiRandomAgent
 from game.Game import Game
+from utils.Utils import encoded, InvalidActionError
 
-
-# TODO: Parametrizable stuff
-HOST = '127.0.0.1'  # Standard loopback interface address (localhost)
-PORT = 65432        # Port to listen on (non-privileged ports are > 1023)
 
 NUM_GAMES = 50
+WIN_FLAG = 45
 
-FLAG = 'JDIS-Flaggerino'
+FLAG = 'JDIS-{Tic_T_AI_Toe_6843521861523}'
+
+print_lock = threading.Lock()
 
 
-def play_game(game, conn):
+# thread function
+def threaded(conn, addr):
+    try:
+        with conn:
+            num_wins = 0
+            for i in range(NUM_GAMES):
+                # TODO: Doc
+                game = Game(SemiRandomAgent, HumanAgent)
+                try:
+                    try:
+                        winner = Game.play_game(game, conn, addr)
+                        if winner >= 0:
+                            num_wins += 1
+                        print('{}:{} : {}/{}'.format(
+                            addr[0], addr[1], num_wins, NUM_GAMES)
+                        )
+                        conn.sendall(encoded('{}/{}'.format(num_wins, i+1)))
+                    except InvalidActionError:
+                        print('{}:{} : Invalid action'.format(addr[0], addr[1]))
+                        conn.sendall(encoded('Invalid action !'))
+                        break
+                except ConnectionResetError:
+                    print('{}:{} : Connection Reset'.format(addr[0], addr[1]))
+                    break
+
+            if num_wins > WIN_FLAG:
+                conn.sendall(encoded(FLAG))
+            else:
+                conn.sendall(encoded('No flag for you !'))
+    except socket.timeout:
+        print('{}:{} : Socket timeout'.format(addr[0], addr[1]))
+    except:
+        e = sys.exc_info()[0]
+        print(e, 'happened')
+    exit()
+
+
+def main(host, port):
     # TODO: Doc
-    # TODO: Handle invalid actions errors, connection reset errors, etc.
-    while not game.state.is_terminal():
-        action = game.player1.get_action(game.state)
-        t = game.step(game.player1.type, action)
-        if t and t > 0:
-            print('Player {} wins'.format(t))
-            return t
-        elif t == -1:
-            print('A draw')
-            return t
-        action = game.player2.get_action(game.state, conn)
-        t = game.step(game.player2.type, action)
-        if t and t > 0:
-            print('Player {} wins'.format(t))
-            return t
-        elif t == -1:
-            print('A draw')
-            return t
+    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+        s.bind((host, int(port)))
+        s.listen()
 
-        conn.sendall(game.state.printboard())
+        while True:
+            try:
+                conn, addr = s.accept()
+                conn.settimeout(1.0)
+                print('{}:{} : Connection established'.format(
+                    addr[0], addr[1])
+                )
+
+                start_new_thread(threaded, (conn, addr,))
+            except KeyboardInterrupt:
+                break
+            except:
+                e = sys.exc_info()[0]
+                print(e, 'happened')
+
+        s.close()
 
 
-with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
-    s.bind((HOST, PORT))
-    s.listen()
-    conn, addr = s.accept()
-    with conn:
-        for _ in range(NUM_GAMES):
-            # TODO: Doc
-            # TODO: Handle win/losses
-            # WIP
-            game = Game(RandomAgent, HumanAgent)
-            conn.sendall(game.state.printboard())
-            winner = play_game(game, conn)
-
-        conn.sendall(FLAG)
+if __name__ == '__main__':
+    host = sys.argv[1]
+    port = sys.argv[2]
+    main(host, port)
