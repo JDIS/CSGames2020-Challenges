@@ -7,7 +7,7 @@ then
     exit 1
 fi
 
-for i in {1..2}
+for i in {1..3}
 do
   /opt/flag_$i 2> /root/.f${i}addr &
   sleep 0.3
