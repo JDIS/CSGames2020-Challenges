@@ -2,10 +2,10 @@
 import random
 import socket
 
-from game.GameState import GameState
+from GameState import GameState
 
 HOST = '0.0.0.0'  # The server's hostname or IP address
-PORT = 65432      # The port used by the server
+PORT = 65431      # The port used by the server
 
 
 # Establish connection
