@@ -4,7 +4,7 @@
 TODO: Lore
 
 ## Détails
-
+- TODO: Adresse et port du serveur
 - Le serveur (X) jouera toujours en premier. Vous (O) jouerez toujours deuxième.
 - Le serveur jouera 50 parties en rafale. Vous devrez en gagner ou obtenir une partie nulle 45 fois sur 50 pour obtenir le flag.
 - Le serveur envera l'état du jeu et vous devrez répondre par l'action choisie. Seulement le caractère correspondant à l'action choisie doit être retournée.
