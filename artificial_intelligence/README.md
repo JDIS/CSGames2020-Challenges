@@ -2,7 +2,7 @@
 
 ## Principe
 
-Les participants ('O') devront battre ou avoir un jeu nul contre le server ('X') 45/50. 
+Les participants ('O') devront battre ou avoir un jeu nul contre le server ('X') 45 fois sur 50. 
 
 Le serveur joue toujours en premier.
 

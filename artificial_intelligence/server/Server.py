@@ -64,6 +64,8 @@ def main(host, port):
         s.bind((host, int(port)))
         s.listen()
 
+        print('Server is up')
+
         while True:
             try:
                 conn, addr = s.accept()

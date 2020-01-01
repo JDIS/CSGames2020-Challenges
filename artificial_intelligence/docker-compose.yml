@@ -1,0 +1,7 @@
+version: '3'
+services:
+  server:
+    build: .
+    command: python -u server/Server.py 0.0.0.0 65432
+    ports:
+      - "65432:65432"

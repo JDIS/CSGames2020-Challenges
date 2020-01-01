@@ -4,7 +4,7 @@ import socket
 
 from game.GameState import GameState
 
-HOST = '127.0.0.1'  # The server's hostname or IP address
+HOST = '0.0.0.0'  # The server's hostname or IP address
 PORT = 65432        # The port used by the server
 
 
