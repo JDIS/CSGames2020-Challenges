@@ -9,7 +9,11 @@ class Quiz():
         self.questions = []
         self.current_question = 0
 
-        self.intro = 'INTRO'
+        self.intro = 'Il est maintenant temps de sortir le Charlie Eppes' \
+            + 'en vous afin de faire valoir vos connaissances triviales en ' \
+            + 'mathématiques.\n Il vous sera présenté des suites de nombres ' \
+            + 'et vous devrez dire le prochain. Si vous avez toutes les ' \
+            + 'bonnes réponses, le flag vous sera donné. Prêt.e ?\n\n'
         self.pre = 'Avec les nombres ...'
         self.post = 'Quel est le suivant ?'
         self.prompt = '>'

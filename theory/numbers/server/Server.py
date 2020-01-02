@@ -21,6 +21,7 @@ def threaded(conn, addr, path):
     try:
         with conn:
             quiz = Quiz(path)
+            conn.sendall(encoded(quiz.intro))
             has_flag = True
             while not quiz.is_done():
                 question = quiz.get_question()
