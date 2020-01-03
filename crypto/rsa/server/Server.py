@@ -11,7 +11,7 @@ import threading
 from quiz.Quiz import Quiz
 from utils.Utils import encoded, decoded
 
-FLAG = 'JDIS-{N3mb3r5_R_FuN_33368448}'
+FLAG = 'Transformez la dernière réponse en hex puis en string pour obtenir le flag !'
 
 print_lock = threading.Lock()
 
@@ -58,7 +58,7 @@ def main(host, port, path):
         while True:
             try:
                 conn, addr = s.accept()
-                conn.settimeout(10.0)
+                conn.settimeout(60.0)
                 print('{}:{} : Connection established'.format(
                     addr[0], addr[1])
                 )

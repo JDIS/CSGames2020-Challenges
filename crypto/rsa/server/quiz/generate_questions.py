@@ -6,6 +6,8 @@ import random
 from utils.Utils import generate_prime_number
 from functools import reduce
 
+random.seed(1337)
+
 
 def getModInverse(a, m):
     if math.gcd(a, m) != 1:
@@ -34,6 +36,8 @@ def generate_q1():
 
     print('Answers')
     print('n: {}'.format(n))
+
+    return {'p': p, 'q': q}, {'n': n}
 
 
 def generate_q2():
@@ -200,7 +204,7 @@ def generate_q8():
     c = pow(m, e, n)
 
     print('Given n, e, c generate m')
-   # Then, decrpyt
+    # Then, decrpyt
     ps = list(primefac.primefac(n))
     phi = 1
     for i in ps:
