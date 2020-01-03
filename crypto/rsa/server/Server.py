@@ -11,7 +11,8 @@ import threading
 from quiz.Quiz import Quiz
 from utils.Utils import encoded, decoded
 
-FLAG = 'Transformez la dernière réponse en hex puis en string pour obtenir le flag !'
+FLAG = 'Transformez la dernière réponse en hexadécimal puis ' \
+    + 'en string pour obtenir le flag !'
 
 print_lock = threading.Lock()
 
