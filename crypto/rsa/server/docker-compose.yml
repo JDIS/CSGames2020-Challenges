@@ -1,0 +1,7 @@
+version: '3'
+services:
+  server:
+    build: .
+    command: python -u Server.py 0.0.0.0 54321 quiz/questions.json
+    ports:
+      - "54321:54321"

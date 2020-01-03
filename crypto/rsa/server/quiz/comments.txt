@@ -1,0 +1,7 @@
+1: Avec p, q, trouver n
+2: Avec n, p, trouver q
+3: Avec p et q, e, décrypter le message
+...
+
+9: e qui est trop petit
+10: Décrypter avec n qui a plusieurs facteur
