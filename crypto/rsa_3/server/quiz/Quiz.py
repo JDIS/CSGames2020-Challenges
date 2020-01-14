@@ -9,21 +9,20 @@ class Quiz():
         self.questions = []
         self.current_question = 0
 
-        self.intro = 'Voici le temps de tester vos connaissances sur ' \
-            + 'l\'algorithme RSA ! RSA possède plusieurs failles possibles ' \
-            + 's\'il est mal implémenté ou si certaines valeurs sont mal ' \
-            + 'choisies. Répondez aux questions suivantes pour obtenir ' \
-            + 'le flag !\n' \
-            + 'Tout au long de ces questions:\n' \
-            + 'phi = totient(n)\n' \
-            + 'c = ciphertext (texte encodé)\n' \
-            + 'm = message (texte clair)\n' \
-            + 'd = d\n' \
-            + 'p = p\n' \
-            + 'q = q\n' \
-            + 'e = e\n' \
-            + 'De plus, toutes les valeurs seront des entiers pour ' \
-            + 'faciliter les échanges. Bonne chance !\n\n'
+        self.intro = '''
+Voici le temps de tester vos connaissances sur l'algorithme RSA ! Répondez aux questions suivantes pour obtenir le flag ! Ces questions porterons sur de mauvaises implémentations possible de RSA.
+Portez bien attention aux valeurs !
+ATTENTION ! Les valeurs envoyées et attendues peuvent être assez grandes. Assurez-vous de pouvoir les gérer !
+Tout au long de ces questions:
+phi = totient(n)
+c = ciphertext (texte encodé)
+m = message (texte clair)
+d = d
+p = p
+q = q
+e = e
+De plus, toutes les valeurs seront des entiers pour faciliter les échanges. Bonne chance !\n\n'''
+
         self.pre = 'Avec les valeurs suivantes'
         self.post = ''
         self.prompt = '>'
