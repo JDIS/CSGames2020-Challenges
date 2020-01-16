@@ -12,22 +12,16 @@ Les arcs sont définis par la source, la destination et le prix de déplacement.
 
 ## Intéraction avec la plateforme
 ### Inputs
-**Ligne 1**: Le nombre de noeud.
+**Ligne 1**: Le noeud de départ et le noeud d'arrivée
 
-**Ligne 2**: Le nombre d'arc `N`.
-
-**Ligne 3**: Le noeud initial.
-
-**Ligne 4**: Le noeud de destination.
-
-**Ligne N**: Les arcs (source destination prix).
+**Ligne N**: Les arcs (source destination coût).
 
 ### Output
-Le flag est la concaténation de la sortie de tous les graphes un après l'autre.
+Le flag est la concaténation de la sortie de tous les graphes un après l'autre, donné à un algorithme de hashage MD5, dans le format `JDIS-{CONTENT_GOES_HERE}`
 
-**Ligne 1**: Le noeud initial et le noeud final.
-
-**Ligne 2 à N**: Noeud final.
+Exemple de flag:
+Sorties de tous les grapes concaténés: 010120123
+Flag: `JDIS-{a9190890aa32e36357384bc106b201b0}`
 
 ### Exemple
 **Input**
