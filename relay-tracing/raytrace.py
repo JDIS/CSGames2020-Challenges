@@ -51,6 +51,7 @@ def intersect_plane(O, D, P, N):
     # O and P are 3D points, D and N (normal) are normalized vectors.
 
     # TODO: didnt have time to complete :(
+    # look here https://www.scratchapixel.com/lessons/3d-basic-rendering/minimal-ray-tracer-rendering-simple-shapes/ray-plane-and-ray-disk-intersection
     d = np.inf
     return d
 
@@ -61,6 +62,7 @@ def intersect_sphere(O, D, S, R):
     # O and S are 3D points, D (direction) is a normalized vector, R is a scalar.
 
     # TODO: didnt have time to complete :(
+    # look here https://en.wikipedia.org/wiki/Line%E2%80%93sphere_intersection
     d = np.inf
     return d
 
