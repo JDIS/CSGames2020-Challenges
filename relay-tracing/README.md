@@ -9,7 +9,7 @@ Selon les commentaires qu'ils ont laissé, terminez l'implémentation. Pour soum
 nc TODO Adresse < fig.png
 ```
 
-Si vous ne connaissez rien au ray-tracing, ne paniquez pas ! C'est normal que vous soyez mis devant de la matière inconnue. Dans la vrai compétition, de la documentation vous sera fournie. Ici, vous êtes encouragés à chercher sur le web pour trouver des solutions.
+Si vous ne connaissez rien au ray-tracing, ne paniquez pas ! C'est normal que vous soyez mis devant de la matière inconnue. Dans la vrai compétition, de la documentation vous sera fournie. Ici, vous êtes encouragés à utiliser les liens fournis dans le code. Bien sûr, des solutions sont disponibles sur le web, mais on vous déconseille de les suivre.
 
 Bonne chance !
 
