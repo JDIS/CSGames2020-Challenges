@@ -1,0 +1,7 @@
+version: '3'
+services:
+  server_1:
+    build: .
+    command: python -u Server.py 0.0.0.0 6666 'flag.png'
+    ports:
+      - "6666:6666"
