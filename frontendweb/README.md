@@ -1,5 +1,3 @@
-TODO CORS
-
 # Challenge Front-end JavaScript
 
 Un serveur backend est accessible à cette addresse: SOMETHING
@@ -56,17 +54,17 @@ Ce serveur contient un endpoints pour obtenir des informations sur les pannes de
 
 Le paramètre "ligne" est optionnel. S'il n'est pas spécifié, toutes les lignes de métro seront retournées.
 
-**Le challenge consiste à créer un front-end Web pour présenter ces données.**
-- Un tableau doit afficher toutes les colonnes reçues
-- Ce tableau doit avoir un header avec le nom des colonnes en français
-- Le tableau doit être paginé. Il doit permettre d'accéder à la première et à la dernière page, ainsi qu'à +- 3 pages de la page courante.
-- Lorsqu'on est à la première page ou à la dernière page, le bouton première page ou dernière page est grisé, selon le cas.
-- S'il n'y a aucune donnée à afficher, Un message doit être inscrit au lieu du tableau.
-- Au dessus du tableau, on peut sélectionner un bouton coloré rond selon la couleur de la ligne pour filtrer les résultats. Un indicateur entourant le rond doit permettre de savoir quelle ligne est sélectionnée. 
-- Recliquer sur le bouton sélectionné fait qu'on fetch toutes les lignes de métro.
-- Cliquer sur un header permet de trier le tableau en ordre de cet header. Recliquer dessus fait en sorte que le tri est inversé. Une flèche permet de connaitre le sens du tri.
-- Au lieu d'afficher 1 ou 0, les collonnes booléennes affichent un emoji checkbox ✅ ou un emoji X rouge ❌.
-- Un élément visuel doit permettre d'identifier qu'une requête vers le serveur est en cours.
+**Le challenge consiste à créer un front-end Web pour présenter ces données. Pas besoin de faire ça en ordre.**
+0. Un tableau doit afficher toutes les colonnes reçues (100pts)
+1. Ce tableau doit avoir un header avec le nom des colonnes en français (25pts)
+2. Le tableau doit être paginé. Il doit permettre d'accéder à la première et à la dernière page, ainsi qu'à +- 3 pages de la page courante. (75pts)
+3. Lorsqu'on est à la première page ou à la dernière page, le bouton première page ou dernière page est grisé, selon le cas. (25 pts)
+4. S'il n'y a aucune donnée à afficher, Un message doit être inscrit au lieu du tableau. (25pts)
+5. Au dessus du tableau, on peut sélectionner un bouton coloré rond selon la couleur de la ligne pour filtrer les résultats. Un indicateur entourant le rond doit permettre de savoir quelle ligne est sélectionnée. (50pts)
+6. Recliquer sur le bouton sélectionné fait qu'on fetch toutes les lignes de métro. (25pts)
+7. Cliquer sur un header permet de trier le tableau en ordre de cet header. Recliquer dessus fait en sorte que le tri est inversé. Une flèche permet de connaitre le sens du tri. (50 pts)
+8. Au lieu d'afficher 1 ou 0, les collonnes booléennes affichent un emoji checkbox ✅ ou un emoji X rouge ❌. (25pts)
+9. Un élément visuel doit permettre d'identifier qu'une requête vers le serveur est en cours. (25pts)
 
 Il est INTERDIT d'utiliser une librairie de composantes pour faire le tableau.
 
