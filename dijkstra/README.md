@@ -1,4 +1,4 @@
-# Dijkstra
+# The most important challenge of them all
 ## Règles
 Pour résoudre ce problème, vous devez parcourir un [graph](https://en.wikipedia.org/wiki/Graph_(abstract_data_type)) et
 trouver le chemin le plus court entre deux noeuds donnés. Pour un même poids, un
@@ -26,8 +26,6 @@ Flag: `JDIS-{a9190890aa32e36357384bc106b201b0}`
 ### Exemple
 **Input**
 ```
-4
-4
 0
 3
 0 1 2
