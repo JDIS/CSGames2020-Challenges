@@ -1,6 +1,6 @@
 version: '3'
 services:
-  server:
+  theory_server:
     container_name: theory_server
     build: .
     command: python -u Server.py 0.0.0.0 54321 quiz/questions.json
