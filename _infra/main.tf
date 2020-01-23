@@ -50,6 +50,12 @@ resource "digitalocean_firewall" "csgamers" {
     source_addresses = ["0.0.0.0/0", "::/0"]
   }
 
+  inbound_rule {
+    protocol         = "tcp"
+    port_range       = "65431"
+    source_addresses = ["0.0.0.0/0", "::/0"]
+  }
+
   # Outbound
   outbound_rule {
     protocol              = "tcp"
