@@ -2,6 +2,7 @@ version: '2'
 
 services:
   mariadb:
+    container_name: frontend_mariadb
     image: 'bitnami/mariadb:10.1'
     environment:
       - ALLOW_EMPTY_PASSWORD=yes
@@ -12,10 +13,11 @@ services:
     - "3006:3006"
 
   myapp:
+    container_name: frontend_server
     tty: true
     build: ./
     environment:
-      - DB_HOST=mariadb
+      - DB_HOST=frontend_mariadb
       - DB_USERNAME=my_user
       - DB_DATABASE=my_database
       - DB_PASSWORD=my_password
@@ -27,6 +29,7 @@ services:
       - ./:/app
 
   xd:
+    container_name: frontend_seeding
     image: 'bitnami/mariadb:10.1'
     depends_on:
         - mariadb

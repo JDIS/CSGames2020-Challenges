@@ -1,0 +1,8 @@
+version: '3'
+services:
+  rsa_3_server:
+    container_name: rsa_3_server
+    build: .
+    command: python -u Server.py 0.0.0.0 24323 quiz/questions.json
+    ports:
+      - "24323:24323"
