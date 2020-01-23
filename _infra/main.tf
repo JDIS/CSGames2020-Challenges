@@ -6,7 +6,7 @@ resource "digitalocean_project" "csgames" {
   description = "Project for CS Games 2020 Backend"
   purpose     = "Web Application"
   environment = "Production"
-  resources   = [digitalocean_droplet.csgames.urn]
+  resources   = [digitalocean_droplet.csgames.urn, digitalocean_floating_ip.csgames.urn]
 }
 
 /*====
@@ -25,7 +25,33 @@ resource "digitalocean_droplet" "csgames" {
   ssh_keys = [digitalocean_ssh_key.default.fingerprint]
 }
 
+/*====
+ Networking
+======*/
 resource "digitalocean_floating_ip" "csgames" {
   droplet_id = digitalocean_droplet.csgames.id
   region     = digitalocean_droplet.csgames.region
+}
+
+resource "digitalocean_firewall" "csgamers" {
+  name = "csgames-firewall"
+  droplet_ids = [digitalocean_droplet.csgames.id]
+
+  inbound_rule {
+    protocol         = "tcp"
+    port_range       = "22"
+    source_addresses = ["0.0.0.0/0", "::/0"]
+  }
+
+  outbound_rule {
+    protocol              = "tcp"
+    port_range            = "1-65535"
+    destination_addresses = ["0.0.0.0/0", "::/0"]
+  }
+
+  outbound_rule {
+    protocol              = "udp"
+    port_range            = "1-65535"
+    destination_addresses = ["0.0.0.0/0", "::/0"]
+  }
 }
