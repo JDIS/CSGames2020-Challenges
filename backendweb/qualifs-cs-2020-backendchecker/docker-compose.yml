@@ -8,4 +8,4 @@ services:
       - lvl2=FLAG-2d29deedf37d93530e8faa559b991d0b
       - lvl3=FLAG-00b8e1fdca74f9011afcaaf52e2da9c8
     ports:
-      - "80:80"
+      - "4000:80"
