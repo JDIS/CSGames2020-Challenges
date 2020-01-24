@@ -1,6 +1,7 @@
 version: '3'
 services:
   web:
+    container_name: backend_server
     build: ./
     environment:
       - lvl0=FLAG-c8bc430804415b0872f5ae8ef1d2c1d1
