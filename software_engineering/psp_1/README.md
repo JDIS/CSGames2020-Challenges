@@ -10,13 +10,8 @@ La PSP utilise une architecture MIPS qui appartient à la famille RISC. Pour ce 
   - 4 saved registers: `$s0`, `$s1`, `$s2`, `$s3`
   - 1 zero register: `$zero`
   - 1 low-order of word: `lo`
-- La RAM est supposée infinie
-- Seule la `stack` sera utilisée (pas de `heap`)
 - Considérez que tous les registres sont initialisés à 0
 - Considérez qu'il n'y aura pas de [dépassement d'entier](https://fr.wikipedia.org/wiki/D%C3%A9passement_d%27entier)
-
-
-Afin de simplifier le travail, les addresses seront des entiers commençant à 0 et incrémentés par 1 (au lieu de 4 normalement dans une architecture 32 bits).
 
 ## Liste des instructions
 Le défi utilise une version française de l'assembleur MIPS 1998 (pour éviter la triche). Voici une [documentation](http://www.mrc.uidaho.edu/mrc/people/jff/digital/MIPSir.html) détaillée des différentes instrucstions originales. Cet assembleur est relativement simple, presque toutes les instructions ont le format suivant: `INSTRUCTION DESTINATION SOURCE_1 SOURCE_2`.
