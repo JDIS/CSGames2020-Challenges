@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /users.php
+
+#flag{MrR0b0t$}

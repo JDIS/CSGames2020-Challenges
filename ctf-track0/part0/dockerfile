@@ -1,0 +1,32 @@
+FROM debian:buster
+
+RUN apt-get update
+
+#Installing ssh
+RUN apt install -y openssh-server
+RUN mkdir /var/run/sshd
+
+#SSH user
+RUN useradd limiteduser
+RUN echo 'limiteduser:pass' | chpasswd
+
+#SSH setup
+RUN sed -i 's/PermitRootLogin prohibit-password/PermitRootLogin no/' /etc/ssh/sshd_config
+RUN sed 's/AllowUsers=/AllowUsers=limiteduser/'
+
+#Installing challenge packages
+RUN apt install -y sudo
+RUN apt install -y vim
+
+#Add other users
+RUN useradd vimuser
+RUN useradd hintreader
+RUN sed -i '/%sudo/a limiteduser ALL=(vimuser) NOPASSWD: /usr/bin/vim, !/usr/bin/su\nvimuser ALL=(hintreader) NOPASSWD:ALL' /etc/sudoers
+
+#Copy flag-hint
+COPY ./hint /home/limiteduser/hint
+RUN chown hintreader:hintreader /home/limiteduser/hint
+RUN chmod 600 /home/limiteduser/hint
+
+EXPOSE 22
+CMD ["/usr/sbin/sshd", "-D"]

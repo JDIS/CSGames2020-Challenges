@@ -1,0 +1,6 @@
+asn1crypto==0.24.0
+crypto==1.4.1
+cryptography==2.6.1
+pycrypto==2.6.1
+requests==2.21.0
+websocket-client==0.53.0
