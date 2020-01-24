@@ -1,0 +1,11 @@
+FROM node:10-alpine
+
+WORKDIR /usr/local/src/service
+
+RUN npm install express
+COPY server2.js .
+
+WORKDIR /
+
+EXPOSE 5000
+ENTRYPOINT ["node", "/usr/local/src/service/server.js"]
