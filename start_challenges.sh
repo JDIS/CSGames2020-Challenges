@@ -9,3 +9,4 @@ docker-compose -f backendweb/qualifs-cs-2020-backendchecker/docker-compose.yml u
 docker-compose -f ctf-track0/part0/docker-compose.yml up -d
 docker-compose -f ctf-track0/part1/docker-compose.yml up -d
 docker-compose -f ctf-track0/part2/docker-compose.yml up -d
+docker-compose -f php_lfi/docker-compose.yml up -d
