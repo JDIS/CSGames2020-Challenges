@@ -16,7 +16,7 @@ int main()
     remote[0].iov_base = buffer_addr;
     remote[0].iov_len = buffer_size;
 
-    ssize_t nread = process_vm_readv(process_id, local, 2, remote, 1, 0);
+    ssize_t nread = process_vm_readv(process_id, local, 1, remote, 1, 0);
     if (nread == buffer_size)
     {
         fprintf(stderr, "%s\n", local[0].iov_base);

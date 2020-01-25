@@ -24,7 +24,7 @@ int main()
 
     for (;;)
     {
-        ssize_t nread = process_vm_readv(process_id, local, 2, remote, 1, 0);
+        ssize_t nread = process_vm_readv(process_id, local, 1, remote, 1, 0);
         if (nread != buffer_size)
             return 1;
         struct Node* buffer = (struct Node*)local[0].iov_base;
