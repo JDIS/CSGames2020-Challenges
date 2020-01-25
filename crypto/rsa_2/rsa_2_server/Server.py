@@ -11,7 +11,7 @@ import threading
 from quiz.Quiz import Quiz
 from utils.Utils import encoded, decoded
 
-FLAG = 'JDIS-{RSA_ENCRYPT-DECRPYT-12633849}'
+FLAG = 'JDIS-{RSA_ENCRYPT-DECRPYT}'
 
 print_lock = threading.Lock()
 
