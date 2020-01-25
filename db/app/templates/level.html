@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% from 'bootstrap/form.html' import render_form %}
+
+{% block content %}
+    <h1>{{ title }}</h1>
+
+    <p>{{ description }}</p>
+    <form id="query_form" method='POST' action='/query'>
+        <div class="form-group">
+            <textarea class="form-control" name="q" placeholder="Your query goes here"></textarea>
+            <input class="form-control" type=hidden name="level" value="{{ title }}" />
+            <button class="btn btn-primary" type="submit">Submit</button>
+        </div>
+    </form>
+
+    <h3>Votre requête</h3>
+    <div id="flag"></div>
+    <div id="error"></div>
+    <table id='output' class="table table-striped table-dark"></table>
+
+    <h3>Résultat attendu</h3>
+    <table id='challenge' class="table table-striped table-dark"></table>
+
+    <script>
+    const challenge_data = {{ data|tojson|safe }};
+    
+    render_table('challenge', challenge_data);
+
+    document.getElementById('query_form').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const form = document.getElementById("query_form");
+
+        let formData = new FormData();
+        for (let input of form) {
+            formData.append(input.name, input.value);
+        }
+
+        options = {
+            "method": form.method,
+            "body": formData
+        };
+
+        fetch(form.action, options)
+            .then(response => response.json())
+            .then(data => {
+                if ("error" in data) throw data.error;
+                if ("flag" in data) render_flag(data.flag);
+
+                
+                document.getElementById('error').innerHTML = '';
+                render_table('output', data);
+            })
+            .catch(error => render_error(error))
+    });
+    </script>
+{% endblock %}

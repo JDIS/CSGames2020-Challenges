@@ -1,0 +1,40 @@
+{% from 'bootstrap/nav.html' import render_nav_item %}
+{% from 'bootstrap/utils.html' import render_messages %}
+{% from 'bootstrap/utils.html' import render_static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Bootstrap-Flask Demo Application</title>
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    {{ bootstrap.load_css() }}
+    {{ render_static('js', 'scripts.js') }}
+</head>
+<body>
+    <nav class="navbar navbar navbar-dark bg-dark navbar-expand-lg mb-4">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                {{ render_nav_item('index', 'Home') }}
+                <a class="nav-item nav-link" href="{{ url_for('static', filename='schema.png') }}">Schéma</a>
+                {{ render_nav_item('level_1', 'Niveau 1') }}
+                {{ render_nav_item('level_2', 'Niveau 2') }}
+                {{ render_nav_item('level_3', 'Niveau 3') }}
+            </ul>
+        </div>
+    </nav>
+    
+    <main class="container">
+        {{ render_messages(container=False, dismissible=True) }}
+        {% block content %}{% endblock %}
+    </main>
+
+    {{ bootstrap.load_js() }}
+
+</body>
+</html>
