@@ -4,20 +4,17 @@ AJOUT $s1 $s1 $s0
 AJOUTI $s2 $zero 2344
 AJOUT $t0 $s0 $s2
 AJOUTI $s3 $zero 670
-
 XOR $t1 $s0 $s3
 AJOUTI $t1 $t1 -4000
 ET $t2 $s3 $s1
 OU $t3 $t2 $s2
 AJOUT $t0 $t0 $t2
 SOUS $t0 $t0 $t3
-
 MULTI $t0 $t1
 OU $s2 $s2 $t3
 BOUGELO $t3
 OUI $t3 $t3 6666
 ET $s1 $s1 $t3
-
 DIVI $s2 $s3
 BOUGELO $t0
 AJOUT $s0 $s0 $t0

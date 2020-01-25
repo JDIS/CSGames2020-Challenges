@@ -59,4 +59,4 @@ Pour ce défi, les instructions suivantes devront être implémentées:
     - Description: Effectue un OU EXCLUSIF entre les valeurs de deux registres et enregistre le résultat dans un autre registre
 
 ## Entré et résultat attendu
-Le [fichier suivant](https://pastebin.com/HDRgxUiP) contient le programme que vous devez exécuter. Le flag est un chiffre conrespondant à l'addition des registres `$s0` à `$s3`.
+Le [fichier suivant](https://pastebin.com/QWRrDBHt) contient le programme que vous devez exécuter. Le flag est un chiffre conrespondant à l'addition des registres `$s0` à `$s3`.

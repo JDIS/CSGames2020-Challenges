@@ -1,0 +1,32 @@
+AJOUTI $s0 $zero 4323
+AJOUTI $s1 $zero 438
+AJOUT $s1 $s1 $s0
+AJOUTI $s2 $zero 2344
+AJOUT $t0 $s0 $s2
+AJOUTI $s3 $zero 670
+XOR $t1 $s0 $s3
+AJOUTI $t1 $t1 -4000
+ET $t2 $s3 $s1
+OU $t3 $t2 $s2
+AJOUTI $t0 $zero 0
+AJOUTI $t1 $zero 100
+BEQ $t0 $t1 6
+AJOUTI $s3 $s3 5
+SOUS $t2 $t1 $t0
+OU $s3 $s3 $t2
+AJOUTI $t0 $t0 1
+SAUT 12
+SAUTAL 21
+AJOUT $s2 $s2 $v0
+SAUT 30
+SAUVW $s0 0($sp)
+SAUVW $s1 4($sp)
+AJOUTI $s0 $zero 4323
+AJOUTI $s1 $zero 438
+AJOUT $s1 $s1 $s0
+XOR $v0 $s1 $s0
+LOADW $s1 4($sp)
+LOADW $s0 0($sp)
+SAUTR $ra
+
+FLAG: 15405
