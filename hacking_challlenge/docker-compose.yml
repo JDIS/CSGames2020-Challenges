@@ -1,0 +1,7 @@
+version: '3'
+services:
+  web:
+    container_name: hacking_challenge
+    build: ./
+    ports:
+      - "6060:80"

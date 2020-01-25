@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Défi Base de Données, Qualifications JDIS CSGames 2020</h1>
+
+    <p>
+        Ce challenge est divisé en 3 niveaux. Chaque niveau donne un flag lorsque réussi.
+        Les niveaux sont en ordre croissant de difficulté, mais peuvent être fait dans n'importe quel ordre.
+    </p>
+
+    <p>
+        Chaque niveau contient un tableau pré-rempli. Le but du niveau est d'écrire la requête SQL engendrant les mêmes résultats que le tableau. Les noms de colonnes doivent être les mêmes que celles du résultat attendu, mais l'ordre des colonnes n'est pas important. Faites attention aux majuscules.
+    </p>
+
+
+    <h2>Schéma</h2>
+
+    <p> La base de données est en SQLite 3. Le schéma de la base de données est accessible <a href="{{ url_for('static', filename='schema.png') }}">ici</a>.
+{% endblock %}
