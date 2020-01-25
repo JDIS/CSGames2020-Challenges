@@ -17,6 +17,7 @@
 
 <body>
   <h1>Participants</h1>
+  <p>Liste des utilisateurs du service csgames.jdis.ca:27777</p>
   <form action="users.php" method="GET">
     <input id="search" name="search" type="text" placeholder="Username here">
     <input id="submit" type="submit" value="Search">
