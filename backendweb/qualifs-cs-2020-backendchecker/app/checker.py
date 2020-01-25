@@ -54,7 +54,7 @@ def testlvl2(backend: str):
             assertt(False, f"Erreur lors de la connection au serveur: {e}")
             return
         assertt(response.status_code == 200, "response code doit être 200")
-        assertt(response.headers.get('Content-Type') == 'application/json', "La réponse doit contenir un header 'Content-Type: application/json'.")
+        assertt(response.headers.get('Content-Type').startswith('application/json'), "La réponse doit contenir un header 'Content-Type: application/json'.")
         try:
             data = json.loads(response.content)
         except Exception as e:
@@ -78,7 +78,7 @@ def testlvl3(backend: str):
         assertt(False, f"Erreur lors de la connection au serveur: {e}")
         return
     assertt(response.status_code == 200, "response code doit être 200 pour le GET. Obtenu: " + str(response.status_code))
-    assertt(response.headers.get('Content-Type') == 'application/json', "La réponse doit contenir un header 'Content-Type: application/json'.")
+    assertt(response.headers.get('Content-Type').startswith('application/json'), "La réponse doit contenir un header 'Content-Type: application/json'.")
     try:
         data = json.loads(response.content)
     except Exception as e:
@@ -107,7 +107,7 @@ def testlvl3(backend: str):
         assertt(False, f"Erreur lors de la connection au serveur: {e}")
         return
     assertt(response.status_code == 200, "response code doit être 200 pour le GET")
-    assertt(response.headers.get('Content-Type') == 'application/json', "La réponse doit contenir un header 'Content-Type: application/json'.")
+    assertt(response.headers.get('Content-Type').startswith('application/json'), "La réponse doit contenir un header 'Content-Type: application/json'.")
     try:
         data: list = json.loads(response.content)
     except Exception as e:
