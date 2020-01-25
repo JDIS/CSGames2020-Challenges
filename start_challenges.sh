@@ -11,3 +11,4 @@ docker-compose -f ctf-track0/part1/docker-compose.yml up -d
 docker-compose -f ctf-track0/part2/docker-compose.yml up -d
 docker-compose -f php_lfi/docker-compose.yml up -d
 docker-compose -f db/docker-compose.yml up -d
+docker-compose -f hacking_challenge/docker-compose.yml up -d
